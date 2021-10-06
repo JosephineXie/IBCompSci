@@ -41,24 +41,20 @@ public class Game {
 	{
 		int n = 0;
 		Scanner kb = new Scanner(System.in);
-		try 
-		{
-			
-		System.out.println("Please enter a number."); 
-		n = kb.nextInt();
-		
-		}
-		catch (Exception e)
-		{
-			System.out.println("WHOOPS!!");
-		}
 		
 		while( n < low || n > high)
 		{
-			System.out.println("Not accepted,try again.");
-			n = kb.nextInt();
-		
+			System.out.println("Please enter a number."); 
+			String ui = kb.nextLine();
+		   try 
+		   {
+			 n = Integer.parseInt(ui);
+		   }
+		catch (Exception e)
+		{
+			System.out.println("WHOOPS!! that's not a number.");
 		}
+	}
 		
 		return n;
 	}
